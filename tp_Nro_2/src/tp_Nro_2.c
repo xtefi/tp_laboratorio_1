@@ -15,7 +15,7 @@
 #define LASTNAME_SIZE 51
 #define QTY_EMPLOYEE 1000
 #include "utn.h"
-#include "employee.h"
+#include "arrayEmployees.h"
 
 
 int main(void) {
@@ -33,11 +33,11 @@ int main(void) {
 		printf("Array inicializado correctamente\n");
 	}
 
-	forceArray(array,QTY_EMPLOYEE, 0,&auxId,"Juan Alfredo","Johnson", 430, 17);
-	forceArray(array,QTY_EMPLOYEE, 2,&auxId,"Lina","Parker", 2522, 4);
-	forceArray(array,QTY_EMPLOYEE, 3,&auxId,"Alba","Frisco", 200, 2);
-	forceArray(array,QTY_EMPLOYEE, 4,&auxId,"Caleb","Bush", 340, 4);
-	forceArray(array,QTY_EMPLOYEE, 5,&auxId,"Juan Alfredo","Smith", 1359, 1);
+	forceArray(array,QTY_EMPLOYEE, 0,&auxId,"Monrgomery","Scott", 430, 17);
+	forceArray(array,QTY_EMPLOYEE, 2,&auxId,"Leonard","McCoy", 2522, 4);
+	forceArray(array,QTY_EMPLOYEE, 3,&auxId,"Hikaru","Sulu", 200, 2);
+	forceArray(array,QTY_EMPLOYEE, 4,&auxId,"James Tiberuis","Kirk", 340, 4);
+	forceArray(array,QTY_EMPLOYEE, 5,&auxId,"Leonard","Nimoy", 1359, 1);
 
 	do
 	{
@@ -65,8 +65,16 @@ int main(void) {
 						printEmployees(array, QTY_EMPLOYEE);
 						if(!utn_getNumero(&auxId, "Ingrese ID del empleado a modificar: \n", "Error, solo numeros: \n", 0, QTY_EMPLOYEE,1))
 						{
-							updateEmployeeInformation(array, QTY_EMPLOYEE, auxId);
+							if(updateEmployeeInformation(array, QTY_EMPLOYEE, auxId)==0)
+								{
+									printf("Empleado modificado correctamente");
+								}
+							else if(updateEmployeeInformation(array, QTY_EMPLOYEE, auxId)!=0)
+								{
+									printf("Error, ID invalido");
+								}
 						}
+
 					}
 					else
 					{
