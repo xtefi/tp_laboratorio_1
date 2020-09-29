@@ -103,21 +103,9 @@ int main(void) {
 				case 4:
 					if(flag == 0)
 					{
-						if(!utn_getNumero(&informes,"Que informacion desea ver?\n"
-								"1. Listado de los empleados ordenados alfabéticamente por Apellido y Sector. \n"
-								"2. Total y promedio de los salarios, y cuántos empleados superan el salario promedio. \n","Error, esa opcion no esta en el menu, reintente: \n", 1, 2, 1))
-						{
-							switch(informes)
-							{
-								case 1:
-									sortArray(array, QTY_EMPLOYEE);
-									printEmployees(array, QTY_EMPLOYEE);
-									break;
-								case 2:
-									salaryInfo(array, QTY_EMPLOYEE);
-									break;
-							}//switch informes
-						}//if get informes
+						sortArray(array, QTY_EMPLOYEE);
+						printEmployees(array, QTY_EMPLOYEE);
+						salaryInfo(array, QTY_EMPLOYEE);
 					}//if flag menu 4
 					else
 					{
