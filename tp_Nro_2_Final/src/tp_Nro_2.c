@@ -22,7 +22,6 @@ int main(void) {
 	setbuf(stdout,NULL);
 
 	int menu;
-	int informes;
 	int flag=1;
 	Employee array[QTY_EMPLOYEE];
 	int auxId;
@@ -92,6 +91,10 @@ int main(void) {
 							{
 								printf("Empleado dado de baja");
 							}
+							else
+							{
+								printf("Error, ID invalido");
+							}
 						}
 					}
 					else
@@ -106,7 +109,7 @@ int main(void) {
 						sortArray(array, QTY_EMPLOYEE);
 						printEmployees(array, QTY_EMPLOYEE);
 						salaryInfo(array, QTY_EMPLOYEE);
-					}//if flag menu 4
+					}
 					else
 					{
 						printf("Error, no hay empleados cargados. Intente con la opcion 1 del menu\n");
