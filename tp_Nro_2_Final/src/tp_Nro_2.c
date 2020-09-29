@@ -62,22 +62,22 @@ int main(void) {
 					if(flag == 0)
 					{
 						printEmployees(array, QTY_EMPLOYEE);
-						if(!utn_getNumero(&auxId, "Ingrese ID del empleado a modificar: \n", "Error, solo numeros: \n", 0, QTY_EMPLOYEE,1))
+						if(!utn_getNumero(&auxId, "\nIngrese ID del empleado a modificar: ", "\nError, solo numeros: ", 0, QTY_EMPLOYEE,1))
 						{
 							if(updateEmployeeInformation(array, QTY_EMPLOYEE, auxId)==0)
 								{
-									printf("Empleado modificado correctamente");
+									printf(" Empleado actualizado correctamente.\n");
 								}
 							else if(updateEmployeeInformation(array, QTY_EMPLOYEE, auxId)!=0)
 								{
-									printf("Error, ID invalido");
+									printf("\nError, ID invalido\n");
 								}
 						}
 
 					}
 					else
 					{
-						printf("Error, no hay empleados cargados. Intente con la opcion 1 del menu\n");
+						printf("\nError, no hay empleados cargados. Intente con la opcion 1 del menu");
 					}
 					break;
 

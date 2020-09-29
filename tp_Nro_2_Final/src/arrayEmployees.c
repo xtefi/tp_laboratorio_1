@@ -337,17 +337,18 @@ int updateEmployeeInformation(Employee* array, int len, int value)
 	{
 		for(int i=0 ; i<len ; i++)
 		{
-			if(array[i].id == value && array[i].isEmpty == 0 && !utn_getNumero(&update, "Ingrese opcion a modificar:\n"
+			if(array[i].id == value && array[i].isEmpty == 0 && !utn_getNumero(&update, "\nQue desea modificar?\n"
 															"1. Nombre\n"
 															"2. Apellido\n"
 															"3. Sector\n"
 															"4. Salario\n"
-															"5. Salir\n", "Error, no esta dentro del rango, reintente: \n", 1, 5, 1))
+															"5. Salir\n"
+															"Igrese su opcion: ", "\nError, no esta dentro del rango, reintente: ", 1, 5, 1))
 			{
 				switch(update)
 				{
 				case 1:
-					if(!utn_getDescripcion(buffer.name, NAME_SIZE, "Reingrese nombre: \n", "Error, no esta dentro del rango, reintente: \n", 1))
+					if(!utn_getDescripcion(buffer.name, NAME_SIZE, "\nReingrese nombre: ", "\nError, no esta dentro del rango, reintente: ", 1))
 					{
 						strcpy(buffer.lastName,array[i].lastName);
 						buffer.salary=array[i].salary;
@@ -356,12 +357,12 @@ int updateEmployeeInformation(Employee* array, int len, int value)
 						array[i]=buffer;
 						array[i].isEmpty=0;
 						retorno=0;
-						printf("Nombre modificado correctamente\n");
+						printf("Nombre modificado -");
 					}
 					break;
 
 				case 2:
-					if(!utn_getDescripcion(buffer.lastName, NAME_SIZE, "Reingrese apellido: \n", "Error, no esta dentro del rango, reintente: \n", 1))
+					if(!utn_getDescripcion(buffer.lastName, NAME_SIZE, "\nReingrese apellido: ", "\nError, no esta dentro del rango, reintente: ", 1))
 					{
 						strcpy(buffer.name,array[i].name);
 						buffer.salary=array[i].salary;
@@ -370,12 +371,12 @@ int updateEmployeeInformation(Employee* array, int len, int value)
 						array[i]=buffer;
 						array[i].isEmpty=0;
 						retorno=0;
-						printf("Apellido modificado correctamente\n");
+						printf("Apellido modificado -");
 					}
 					break;
 
 				case 3:
-					if(!utn_getNumero(&buffer.sector, "Reingrese sector, del 1 al 20 \n", "Error, no esta dentro del rango, reintente: ", MIN_SECTOR, MAX_SECTOR, 1))
+					if(!utn_getNumero(&buffer.sector, "\nReingrese sector, del 1 al 20 ", "\nError, no esta dentro del rango, reintente: ", MIN_SECTOR, MAX_SECTOR, 1))
 					{
 						strcpy(buffer.name,array[i].name);
 						strcpy(buffer.lastName,array[i].lastName);
@@ -384,12 +385,12 @@ int updateEmployeeInformation(Employee* array, int len, int value)
 						array[i]=buffer;
 						array[i].isEmpty=0;
 						retorno=0;
-						printf("Sector modificado correctamente\n");
+						printf("Sector modificado -");
 					}
 					break;
 
 				case 4:
-					if(!utn_getNumeroFlotante(&buffer.salary,"Reingrese salario: \n", "Error, no esta dentro del rango, reintente: \n", MIN_SALARY, MAX_SALARY, 1))
+					if(!utn_getNumeroFlotante(&buffer.salary,"\nReingrese salario: ", "\nError, no esta dentro del rango, reintente: ", MIN_SALARY, MAX_SALARY, 1))
 					{
 						strcpy(buffer.name,array[i].name);
 						strcpy(buffer.lastName,array[i].lastName);
@@ -398,7 +399,7 @@ int updateEmployeeInformation(Employee* array, int len, int value)
 						array[i]=buffer;
 						array[i].isEmpty=0;
 						retorno=0;
-						printf("Salario modificado correctamente\n");
+						printf("Salario modificado -");
 					}
 					break;
 				}//switch
