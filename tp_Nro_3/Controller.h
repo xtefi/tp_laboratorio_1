@@ -7,5 +7,5 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee);
 int controller_sortEmployee(LinkedList* pArrayListEmployee);
 int controller_saveAsText(char* path , LinkedList* pArrayListEmployee);
 int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee);
-
-
+int controller_buscaIdLibre(LinkedList* pArrayListEmployee);
+int controller_ordenaId(void* pEmployeeA, void* pEmployeeB);
